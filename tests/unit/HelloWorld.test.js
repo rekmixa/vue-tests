@@ -1,15 +1,10 @@
 // Import the `mount()` method from Vue Test Utils
 import { mount } from '@vue/test-utils'
-
-// The component to test
-const MessageComponent = {
-  template: '<p>{{ msg }}</p>',
-  props: ['msg']
-}
+import HelloWorld from '@/components/HelloWorld.vue'
 
 test('displays message', () => {
   // mount() returns a wrapped Vue component we can interact with
-  const wrapper = mount(MessageComponent, {
+  const wrapper = mount(HelloWorld, {
     propsData: {
       msg: 'Hello world'
     }
