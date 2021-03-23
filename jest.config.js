@@ -23,7 +23,7 @@ module.exports = {
   globalTeardown: '<rootDir>/src/jest.teardown.js', // Глобальный Teardown
 
   testMatch: [ // Поиск тестов по паттерну (Пример: ./tests/unit/MyComponent.test.js)
-    '<rootDir>/tests/unit/**/?(*.)+(spec|test).[jt]s?(x)'
+    '**/?(*.)+(spec|test).[jt]s?(x)'
   ],
 
   moduleFileExtensions: [ // Расширения, которые используются
@@ -37,11 +37,15 @@ module.exports = {
     '.*\\.(js)$': 'babel-jest'
   },
 
-  moduleNameMapper: { // Импорт модулей (Например, @/MyComponent.vue)
+  moduleNameMapper: { // Импорт модулей (Например, @/components/MyComponent.vue)
     '^@/(.*)$': '<rootDir>/src/$1'
   },
 
   // Сбор информации о покрытии авто-тестами
+  // (может замедлить скорость выполнения тестов)
   collectCoverage: true,
-  collectCoverageFrom: ['**/*.{js,vue}', '!**/node_modules/**']
+  collectCoverageFrom: [
+    '**/*.{js,vue}',
+    '!**/node_modules/**'
+  ]
 }
