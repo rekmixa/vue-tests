@@ -46,6 +46,8 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{js,vue}',
-    '!**/node_modules/**'
+    '!**/node_modules/**',
+    '!**/coverage/**',
+    '!*.js'
   ]
 }
