@@ -1,24 +1,20 @@
 # vue-tests
 
-## Project setup
-```
-yarn install
+## Installation
+
+```bash
+cp .env-dist .env
+yarn
 ```
 
-### Compiles and hot-reloads for development
-```
+## Setup
+
+```bash
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Running tests
 
-### Lints and fixes files
+```bash
+yarn test
 ```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
