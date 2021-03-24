@@ -20,8 +20,6 @@
 </template>
 
 <script>
-import ApiClient from '@/api-client.js'
-
 export default {
   data: () => ({
     email: null,
@@ -32,7 +30,7 @@ export default {
 
   methods: {
     async login() {
-      await ApiClient.login(this.email, this.password)
+      await this.$apiClient.login(this.email, this.password)
         .then(response => {
           if (response?.data?.errors) {
             this.errors = response.data.errors
@@ -53,7 +51,7 @@ export default {
     },
 
     async logout() {
-      await ApiClient.logout(this.$store.state.authToken)
+      await this.$apiClient.logout(this.$store.state.authToken)
         .then(response => {
           if (response?.data?.success) {
             this.$store.commit('removeAuthToken')
