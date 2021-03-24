@@ -7,4 +7,10 @@ export default class ApiClient {
       password
     })
   }
+
+  static logout(token) {
+    return axios.post(`${process.env.VUE_APP_API_URL}/logout`, {
+      token
+    })
+  }
 }
