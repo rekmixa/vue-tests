@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="$store.state.authToken">
-      <input type="submit" value="Log out" @click="logout" />
+      <input type="submit" value="Log out" id="logout-submit" @click="logout" />
     </template>
     <template v-else>
       <div v-if="success">
@@ -12,9 +12,9 @@
           {{ error }}
         </div>
       </div>
-      <input type="text" placeholder="Email" v-model="email" />
-      <input type="password" placeholder="Password" v-model="password" />
-      <input type="submit" value="Log in" @click="login" />
+      <input type="email" placeholder="Email" id="email-input" v-model="email" />
+      <input type="password" placeholder="Password" id="password-input" v-model="password" />
+      <input type="submit" value="Log in" id="login-submit" @click="login" />
     </template>
   </div>
 </template>
